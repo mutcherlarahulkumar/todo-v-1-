@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="title-head">
+        <div class="title-icon"><i class="fa-solid fa-bullseye fa-xl"></i></div>
+        <div class="title">To Do</div>
+        <!-- <div class="title-quote">Nothing is Impossible</div> -->
+    </div>
+    <div class="create-bar">
+        <div class="create-box" >
+        <div class="create-icon"><i class="fa-solid fa-plus"></i></div>
+        <div class="create-button"><form action="/createpost" method="POST">
+            <input type="submit" value="New Task" style="border: none;">
+          </form></div>
+        </div>
+    </div>
+
+    <div class="current-tasks">
+        <div class="task-head">
+            Current Tasks
+        </div>
+        <hr>
+           <% if(locals.data1){ %>
+            <% for(var i=0;i<data1.length;i++){ %>
+                <div class="tasktitle"><%= data1[i].title %> </div>
+                <%= data1[i].description %>
+                <div class="deletebut">
+                    <form action="/deletetask" method="POST">
+                    <input class = "delete-button" name="del_index" type="submit" value="<%= i %>">
+                  </form>
+                </div>
+                <div class="donebutton"><form action="/donetask" method="POST">
+                    <input class = "done-button" name="comp_index" type="submit" value="<%= i %>">
+                  </form></div>
+                <br>
+                <hr>
+                <% } %>
+            <% } %>
+    </div>
+    <div class="comptasks">
+        <div class="task-head">
+            Completed Tasks
+        </div>
+        <% if(locals.data2){ %>
+            <% for(var i =0;i<data2.length;i++){ %>
+                <div class="tasktitle"><%= data2[i].title %> </div>
+                <%= data2[i].description %>
+                <br>
+                <hr>
+                <% } %>
+            <% } %>
+    </div>
+</body>
+</html>
+

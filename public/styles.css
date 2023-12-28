@@ -1,0 +1,53 @@
+*{
+    background-color:aliceblue;
+}
+
+.title-head{
+    font-size: large;
+    padding: 0.5rem;
+    border: 0.8px solid black;
+    display: flex;
+}
+.title{
+    padding-top: 0;
+    padding-left: 0.6rem;
+    color: brown;
+    font-weight: 900;
+    font-size: larger;
+}
+
+.boxdisp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("public/bgp-1.avif");
+}
+.create-bar{
+    padding: 0.3rem;
+    display: block;
+}
+
+.create-box{
+    display: flex;
+    float: right;
+}
+
+.create-box:hover{
+    border: 0.5px solid black;
+}
+.task-head{
+    font-size: x-large;
+    font-weight: 800;
+    padding: 0.8rem;
+    color: blueviolet;
+}
+
+.tasktitle{
+    font-size: large;
+    font-weight: 700;
+}
+
+.delete-button{
+    background-color: rgb(173, 0, 0);
+    
+}
